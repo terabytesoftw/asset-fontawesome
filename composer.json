@@ -1,13 +1,13 @@
 {
-    "name": "terabytesoftw/github-template",
+    "name": "terabytesoftw/asset-fontawesome",
     "type": "yii2-extension",
-    "description": "Template giyhub yii2",
+    "description": "Assets Font Awesome Free",
     "keywords": [
-        "github",
-        "template",
-        "yii"
+        "assets",
+        "font awesome",
+        "free"
     ],
-    "homepage": "https://github.com/terabytesoftw/github-template",
+    "homepage": "https://github.com/terabytesoftw/asset-fontawesome",
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -18,10 +18,10 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=5.4.0",
+        "php": "^7.2.0",
+        "npm-asset/fortawesome--fontawesome-free": "^5.6.3",
         "oomphinc/composer-installers-extender": "^1.1",
-        "yiisoft/yii2": "^2.0.20",
-        "yiisoft/yii2-bootstrap4": "^2.0.3"
+        "yiisoft/yii2": "^2.0.20"
     },
     "require-dev": {
         "codeception/codeception": "^3.0",
@@ -32,14 +32,13 @@
         "hiqdev/composer-config-plugin": "^1.0@dev",
         "monolog/monolog": "*",
         "yiisoft/yii2-debug": "~2.1.0",
-        "yiisoft/yii2-gii": "~2.1.0",
-        "yiisoft/yii2-faker": "~2.0.0"
+        "yiisoft/yii2-gii": "~2.1.0"
     },
     "autoload": {
-        "psr-4": {"terabytesoft\\template\\github\\": "src/"}
+        "psr-4": {"terabytesoft\\assets\\fontawesome\\": "src/"}
     },
     "autoload-dev": {
-        "psr-4": {"terabytesoft\\template\\github\\tests\\": "tests/"}
+        "psr-4": {"terabytesoft\\assets\\fontawesome\\tests\\": "tests/"}
 	},
     "config": {
         "process-timeout": 1800,
@@ -50,6 +49,11 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
+        },
+        "config-plugin": {
+            "params": [
+                "config/assetfontawesome.php"
+            ]
         },
         "installer-types": [
             "bower-asset",
