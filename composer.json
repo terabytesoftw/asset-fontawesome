@@ -53,6 +53,9 @@
         "config-plugin": {
             "params": [
                 "config/assetfontawesome.php"
+            ],
+            "tests": [
+                "config/test.php"
             ]
         },
         "installer-types": [
