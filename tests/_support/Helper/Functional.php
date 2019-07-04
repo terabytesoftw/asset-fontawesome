@@ -6,5 +6,4 @@ namespace terabytesoft\assets\fontawesome\tests\Helper;
 
 class Functional extends \Codeception\Module
 {
-
 }
