@@ -14,7 +14,7 @@ use yii\web\View;
  *
  * Unit tests for codeception asset font awesome solid js svgfont content delivery network
  */
-class CdnSolidJssAssetCest
+class CdnSolidJsAssetCest
 {
     /**
      * @var \yii\web\View;
