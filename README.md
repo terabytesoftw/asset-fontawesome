@@ -7,7 +7,7 @@
 
 <p align="center">
     <a href="https://packagist.org/packages/terabytesoftw/asset-fontawesome" target="_blank">
-        <img src="https://poser.pugx.org/terabytesoftw/asset-fontawesome/v/unstable.svg" alt="Unstable Version">
+        <img src="https://poser.pugx.org/terabytesoftw/asset-fontawesome/v/unstable" alt="Unstable Version">
     </a>
     <a href="https://travis-ci.org/terabytesoftw/asset-fontawesome" target="_blank">
         <img src="https://travis-ci.org/terabytesoftw/asset-fontawesome.svg?branch=master" alt="Build Status">
@@ -73,5 +73,5 @@ $ vendor/bin/codecept run unit --coverage-xml
 
 [![License](https://poser.pugx.org/terabytesoftw/asset-fontawesome/license.svg)](LICENSE.md)
 [![YiiFramework](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](https://www.yiiframework.com/)
-[![Total Downloads](https://poser.pugx.org/terabytesoftw/asset-fontawesome/downloads.svg)](https://packagist.org/packages/terabytesoftw/asset-fontawesome)
+[![Total Downloads](https://poser.pugx.org/terabytesoftw/asset-fontawesome/downloads)](https://packagist.org/packages/terabytesoftw/asset-fontawesome)
 [![Total Downloads](https://github.styleci.io/repos/194880330/shield?branch=master)](https://github.styleci.io/repos/194880330)
