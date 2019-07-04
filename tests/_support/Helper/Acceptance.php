@@ -6,5 +6,4 @@ namespace terabytesoft\assets\fontawesome\tests\Helper;
 
 class Acceptance extends \Codeception\Module
 {
-
 }
