@@ -71,7 +71,7 @@ $ vendor/bin/codecept run unit --coverage-xml
 
 ### **LICENCE:**
 
-[![License](https://poser.pugx.org/terabytesoftw/asset-fontawesome/license.svg)](LICENSE.md)
+[![License](https://poser.pugx.org/terabytesoftw/asset-fontawesome/license)](LICENSE.md)
 [![YiiFramework](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](https://www.yiiframework.com/)
 [![Total Downloads](https://poser.pugx.org/terabytesoftw/asset-fontawesome/downloads)](https://packagist.org/packages/terabytesoftw/asset-fontawesome)
 [![Total Downloads](https://github.styleci.io/repos/194880330/shield?branch=master)](https://github.styleci.io/repos/194880330)
