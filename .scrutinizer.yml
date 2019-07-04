@@ -12,3 +12,9 @@ tools:
         enabled: true
     external_code_coverage:
         timeout: 600
+filter:
+    excluded_paths:
+        - config/*
+        - docs/*
+        - tests/*
+        - vendor/*
