@@ -56,7 +56,6 @@ class CdnAllCssAssetCest
         $I->assertArrayHasKey(CdnAllCssAsset::class, $this->view->assetBundles);
 
         $result = $this->view->renderFile(codecept_data_dir() . 'main.php');
-        var_dump($result);
 
         $I->assertRegexp('/all.css/', $result);
         $I->assertRegexp('/svg-with-js.css/', $result);

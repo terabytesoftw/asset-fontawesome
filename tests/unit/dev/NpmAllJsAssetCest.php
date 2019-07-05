@@ -57,7 +57,6 @@ class NpmAllJsAssetCest
         $I->assertArrayHasKey(NpmAllJsAsset::class, $this->view->assetBundles);
 
         $result = $this->view->renderFile(codecept_data_dir() . 'main.php');
-        var_dump($result);
 
         $I->assertRegexp('/all.js/', $result);
         $I->assertRegexp('/fontawesome.js/', $result);

@@ -28,7 +28,9 @@ class NpmAllJsAsset extends AssetBundle
             'js/all.js',
             'js/fontawesome.js',
             'js/v4-shims.js',
-            'svgs/*',
+            'svgs/brands/*',
+            'svgs/regular/*',
+            'svgs/solid/*',
         ],
     ];
 
