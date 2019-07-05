@@ -17,14 +17,6 @@ class CdnBrandCssAsset extends AssetBundle
     public $css = [];
 
     /**
-     * @var array $depends
-     */
-    public $depends = [
-        \terabytesoft\assets\fontawesome\cdn\CdnFontAwesomeCssAsset::class,
-        \terabytesoft\assets\fontawesome\cdn\CdnUtilitiesCssAsset::class,
-    ];
-
-    /**
      * init
      */
     public function init()
@@ -32,6 +24,9 @@ class CdnBrandCssAsset extends AssetBundle
         parent::init();
         $this->css[] = [
             \Yii::$app->params['asset.fontawesome.cdn.css.brand'],
+            \Yii::$app->params['asset.fontawesome.cdn.css.fontawesome'],
+            \Yii::$app->params['asset.fontawesome.cdn.css.svg-with-js'],
+            \Yii::$app->params['asset.fontawesome.cdn.css.v4-shims'],
         ];
     }
 }

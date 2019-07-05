@@ -16,14 +16,9 @@ class NpmSolidCssAsset extends AssetBundle
      */
     public $css = [
         'css/solid.css',
-    ];
-
-    /**
-     * @var array $depends
-     */
-    public $depends = [
-        \terabytesoft\assets\fontawesome\dev\NpmFontAwesomeCssAsset::class,
-        \terabytesoft\assets\fontawesome\dev\NpmUtilitiesCssAsset::class,
+        'css/fontawesome.css',
+        'css/svg-with-js.css',
+        'css/v4-shims.css',
     ];
 
     /**
@@ -32,6 +27,9 @@ class NpmSolidCssAsset extends AssetBundle
     public $publishOptions = [
         'only' => [
             'css/solid.css',
+            'css/fontawesome.css',
+            'css/svg-with-js.css',
+            'css/v4-shims.css',
             'webfonts/fa-solid*',
         ],
     ];

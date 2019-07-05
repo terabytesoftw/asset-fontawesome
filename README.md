@@ -35,7 +35,7 @@
 
 ```
 config/             contains application configurations
-docs/               contains documentation application basic
+node_modules/       contains dependency assets
 src/                contains source files
 tests/              contains tests codeception for the web application
 vendor/             contains dependent 3rd-party packages
@@ -47,6 +47,97 @@ vendor/             contains dependent 3rd-party packages
     - PHP 7.2 or higher.
 
 ### **INSTALLATION:**
+
+<p align="justify">
+If you do not have <a href="http://getcomposer.org/" title="Composer" target="_blank">Composer</a>, you may install it by following the instructions at <a href="http://getcomposer.org/doc/00-intro.md#installation-nix" title="getcomposer.org" target="_blank">getcomposer.org</a>.
+</p>
+
+You can then install this extension using the following command composer:
+
+~~~
+composer require terabytesoftw/asset-fontawesome '^1.0@dev'
+~~~
+
+or add composer.json:
+
+~~~
+"terabytesoftw/asset-fontawesome":"^1.0@dev"
+~~~
+
+### **ASSETS FONTAWESOME:**
+
+~~~
+/** 
+  * CONTENT DELIVERY NETWORK CSS
+  * NAMESPACE: terabytesoft\assets\fontawesome\cdn
+  */
+- CdnAllCssAsset, CdnBrandCssAsset, CdnRegularCssAsset, CdnSolidCssAsset
+
+/** 
+  * CONTENT DELIVERY NETWORK JS
+  * NAMESPACE: terabytesoft\assets\fontawesome\cdn
+  */
+- CdnAllJsAsset, CdnBrandJsAsset, CdnRegularJsAsset, CdnSolidJsAsset
+
+/** 
+  * DEVELOPER CSS
+  * NAMESPACE: terabytesoft\assets\fontawesome\dev
+  */
+- NpmAllCssAsset, NpmBrandCssAsset, NpmRegularCssAsset, NpmSolidCssAsset
+
+/** 
+  * DEVELOPER JS
+  * NAMESPACE: terabytesoft\assets\fontawesome\dev
+  */
+- NpmAllJsAsset, NpmBrandJsAsset, NpmRegularJsAsset, NpmSolidJsAsset
+
+/** 
+  * PRODUCTION CSS
+  * NAMESPACE: terabytesoft\assets\fontawesome\min
+  */
+- NpmAllMinCssAsset, NpmBrandMinCssAsset, NpmRegularMinCssAsset, NpmSolidMinCssAsset
+
+/** 
+  * PRODUCTION JS
+  * NAMESPACE: terabytesoft\assets\fontawesome\min
+  */
+- NpmAllMinJsAsset, NpmBrandMinJsAsset, NpmRegularMinJsAsset, NpmSolidMinJsAsset
+~~~
+
+### **USAGE:**
+
+~~~
+<?php
+
+// content delivery network
+use terabytesoft\assets\fontawesome\cdn\CdnAllCssAsset;
+
+CdnAllCssAsset::register($this);
+
+echo \yii\helpers\Html::tag('i', '', ['class' => 'fas fa-user-alt fa-2x']);
+~~~
+
+~~~
+<?php
+
+// developer version
+use terabytesoft\assets\fontawesome\dev\NpmAllJsAsset;
+
+NpmAllJsAsset::register($this);
+
+echo \yii\helpers\Html::tag('i', '', ['class' => 'fas fa-user-alt fa-2x']);
+~~~
+
+~~~
+<?php
+
+// minified version
+use terabytesoft\assets\fontawesome\min\NpmAllMinCssAsset;
+
+NpmAllMinCssAsset::register($this);
+
+echo \yii\helpers\Html::tag('i', '', ['class' => 'fas fa-user-alt fa-2x']);
+~~~
 
 
 ### **RUN TESTS CODECEPTION:**

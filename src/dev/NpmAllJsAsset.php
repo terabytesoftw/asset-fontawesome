@@ -12,18 +12,12 @@ use yii\web\AssetBundle;
 class NpmAllJsAsset extends AssetBundle
 {
     /**
-     * @var array $depends
-     */
-    public $depends = [
-        \terabytesoft\assets\fontawesome\dev\NpmFontAwesomeJsAsset::class,
-        \terabytesoft\assets\fontawesome\dev\NpmUtilitiesJsAsset::class,
-    ];
-
-    /**
      * @var array $js
      */
     public $js = [
         'js/all.js',
+        'js/fontawesome.js',
+        'js/v4-shims.js',
     ];
 
     /**
@@ -32,6 +26,8 @@ class NpmAllJsAsset extends AssetBundle
     public $publishOptions = [
         'only' => [
             'js/all.js',
+            'js/fontawesome.js',
+            'js/v4-shims.js',
             'svgs/*',
         ],
     ];

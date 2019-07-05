@@ -51,10 +51,9 @@ class CdnAllCssAssetCest
 
         CdnAllCssAsset::register($this->view);
 
-        $I->assertCount(2, $this->view->assetBundles);
+        $I->assertCount(1, $this->view->assetBundles);
 
         $I->assertArrayHasKey(CdnAllCssAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(CdnUtilitiesCssAsset::class, $this->view->assetBundles);
 
         $result = $this->view->renderFile(codecept_data_dir() . 'main.php');
         var_dump($result);
@@ -75,12 +74,10 @@ class CdnAllCssAssetCest
 
         CdnAllCssAsset::register($this->view);
 
-        $I->assertCount(2, $this->view->assetBundles);
+        $I->assertCount(1, $this->view->assetBundles);
 
         $I->assertArrayHasKey(CdnAllCssAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(CdnUtilitiesCssAsset::class, $this->view->assetBundles);
 
         $I->assertInstanceOf(AssetBundle::class, $this->view->assetBundles[CdnAllCssAsset::class]);
-        $I->assertInstanceOf(AssetBundle::class, $this->view->assetBundles[CdnUtilitiesCssAsset::class]);
     }
 }

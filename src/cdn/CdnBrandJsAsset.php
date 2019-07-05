@@ -12,14 +12,6 @@ use yii\web\AssetBundle;
 class CdnBrandJsAsset extends AssetBundle
 {
     /**
-     * @var array $depends
-     */
-    public $depends = [
-        \terabytesoft\assets\fontawesome\cdn\CdnFontAwesomeJsAsset::class,
-        \terabytesoft\assets\fontawesome\cdn\CdnUtilitiesJsAsset::class,
-    ];
-
-    /**
      * @var array $js
      */
     public $js = [];
@@ -32,6 +24,8 @@ class CdnBrandJsAsset extends AssetBundle
         parent::init();
         $this->js[] = [
             \Yii::$app->params['asset.fontawesome.cdn.js.brand'],
+            \Yii::$app->params['asset.fontawesome.cdn.js.fontawesome'],
+            \Yii::$app->params['asset.fontawesome.cdn.js.v4-shims'],
         ];
     }
 }

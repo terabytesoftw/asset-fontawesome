@@ -12,18 +12,12 @@ use yii\web\AssetBundle;
 class NpmRegularMinJsAsset extends AssetBundle
 {
     /**
-     * @var array $depends
-     */
-    public $depends = [
-        \terabytesoft\assets\fontawesome\min\NpmFontAwesomeMinJsAsset::class,
-        \terabytesoft\assets\fontawesome\min\NpmUtilitiesMinJsAsset::class,
-    ];
-
-    /**
      * @var array $js
      */
     public $js = [
         'js/regular.min.js',
+        'js/fontawesome.min.js',
+        'js/v4-shims.min.js',
     ];
 
     /**
@@ -32,6 +26,8 @@ class NpmRegularMinJsAsset extends AssetBundle
     public $publishOptions = [
         'only' => [
             'js/regular.min.js',
+            'js/fontawesome.min.js',
+            'js/v4-shims.min.js',
             'svgs/regular/*',
         ],
     ];

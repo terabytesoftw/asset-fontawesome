@@ -4,8 +4,6 @@ namespace terabytesoft\assets\fontawesome\tests;
 
 use terabytesoft\assets\fontawesome\tests\UnitTester;
 use terabytesoft\assets\fontawesome\min\NpmSolidMinJsAsset;
-use terabytesoft\assets\fontawesome\min\NpmFontAwesomeMinJsAsset;
-use terabytesoft\assets\fontawesome\min\NpmUtilitiesMinJsAsset;
 use yii\web\AssetBundle;
 use yii\web\View;
 
@@ -52,11 +50,9 @@ class NpmSolidMinJsAssetCest
 
         NpmSolidMinJsAsset::register($this->view);
 
-        $I->assertCount(3, $this->view->assetBundles);
+        $I->assertCount(1, $this->view->assetBundles);
 
         $I->assertArrayHasKey(NpmSolidMinJsAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(NpmFontAwesomeMinJsAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(NpmUtilitiesMinJsAsset::class, $this->view->assetBundles);
 
         $result = $this->view->renderFile(codecept_data_dir() . 'main.php');
 
@@ -76,15 +72,11 @@ class NpmSolidMinJsAssetCest
 
         NpmSolidMinJsAsset::register($this->view);
 
-        $I->assertCount(3, $this->view->assetBundles);
+        $I->assertCount(1, $this->view->assetBundles);
 
         $I->assertArrayHasKey(NpmSolidMinJsAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(NpmFontAwesomeMinJsAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(NpmUtilitiesMinJsAsset::class, $this->view->assetBundles);
 
         $I->assertInstanceOf(AssetBundle::class, $this->view->assetBundles[NpmSolidMinJsAsset::class]);
-        $I->assertInstanceOf(AssetBundle::class, $this->view->assetBundles[NpmFontAwesomeMinJsAsset::class]);
-        $I->assertInstanceOf(AssetBundle::class, $this->view->assetBundles[NpmUtilitiesMinJsAsset::class]);
     }
 
     /**
@@ -99,5 +91,7 @@ class NpmSolidMinJsAssetCest
         $I->assertTrue(is_dir($bundle->basePath));
 
         $I->sourcesPublishVerifyFiles('css', $bundle);
+
+        $I->sourcesPublishVerifyFilesOnly($bundle);
     }
 }

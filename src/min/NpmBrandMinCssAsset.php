@@ -16,14 +16,9 @@ class NpmBrandMinCssAsset extends AssetBundle
      */
     public $css = [
         'css/brands.min.css',
-    ];
-
-    /**
-     * @var array $depends
-     */
-    public $depends = [
-        \terabytesoft\assets\fontawesome\min\NpmFontAwesomeMinCssAsset::class,
-        \terabytesoft\assets\fontawesome\min\NpmUtilitiesMinCssAsset::class,
+        'css/fontawesome.min.css',
+        'css/svg-with-js.min.css',
+        'css/v4-shims.min.css',
     ];
 
     /**
@@ -32,6 +27,9 @@ class NpmBrandMinCssAsset extends AssetBundle
     public $publishOptions = [
         'only' => [
             'css/brands.min.css',
+            'css/fontawesome.min.css',
+            'css/svg-with-js.min.css',
+            'css/v4-shims.min.css',
             'webfonts/fa-brands*',
         ],
     ];

@@ -52,11 +52,9 @@ class CdnSolidJsAssetCest
 
         CdnSolidJsAsset::register($this->view);
 
-        $I->assertCount(3, $this->view->assetBundles);
+        $I->assertCount(1, $this->view->assetBundles);
 
         $I->assertArrayHasKey(CdnSolidJsAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(CdnFontAwesomeJsAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(CdnUtilitiesJsAsset::class, $this->view->assetBundles);
 
         $result = $this->view->renderFile(codecept_data_dir() . 'main.php');
 
@@ -76,14 +74,10 @@ class CdnSolidJsAssetCest
 
         CdnSolidJsAsset::register($this->view);
 
-        $I->assertCount(3, $this->view->assetBundles);
+        $I->assertCount(1, $this->view->assetBundles);
 
         $I->assertArrayHasKey(CdnSolidJsAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(CdnFontAwesomeJsAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(CdnUtilitiesJsAsset::class, $this->view->assetBundles);
 
         $I->assertInstanceOf(AssetBundle::class, $this->view->assetBundles[CdnSolidJsAsset::class]);
-        $I->assertInstanceOf(AssetBundle::class, $this->view->assetBundles[CdnFontAwesomeJsAsset::class]);
-        $I->assertInstanceOf(AssetBundle::class, $this->view->assetBundles[CdnUtilitiesJsAsset::class]);
     }
 }

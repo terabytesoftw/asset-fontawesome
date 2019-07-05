@@ -59,4 +59,20 @@ class Unit extends \Codeception\Module
 
         \PHPUnit_Framework_Assert::assertTrue(is_dir($bundle->basePath));
     }
+
+    /**
+     * sourcesPublishVerifyFilesOnly
+     *
+     * @param string $type
+     * @param array  $bundle
+     */
+    public function sourcesPublishVerifyFilesOnly($bundle): void
+    {
+        foreach ($bundle->publishOptions['only'] as $key => $value) {
+            $directory = $bundle->basePath . DIRECTORY_SEPARATOR . dirname($value);
+            \PHPUnit_Framework_Assert::assertNotEmpty(
+                \yii\helpers\FileHelper::findFiles($directory)
+            );
+        }
+    }
 }

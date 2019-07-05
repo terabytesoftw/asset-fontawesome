@@ -51,13 +51,11 @@ class CdnAllJsAssetCest
 
         CdnAllJsAsset::register($this->view);
 
-        $I->assertCount(2, $this->view->assetBundles);
+        $I->assertCount(1, $this->view->assetBundles);
 
         $I->assertArrayHasKey(CdnAllJsAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(CdnUtilitiesJsAsset::class, $this->view->assetBundles);
 
         $result = $this->view->renderFile(codecept_data_dir() . 'main.php');
-        var_dump($result);
 
         $I->assertRegexp('/all.js/', $result);
         $I->assertRegexp('/v4-shims.js/', $result);
@@ -74,12 +72,10 @@ class CdnAllJsAssetCest
 
         CdnAllJsAsset::register($this->view);
 
-        $I->assertCount(2, $this->view->assetBundles);
+        $I->assertCount(1, $this->view->assetBundles);
 
         $I->assertArrayHasKey(CdnAllJsAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(CdnUtilitiesJsAsset::class, $this->view->assetBundles);
 
         $I->assertInstanceOf(AssetBundle::class, $this->view->assetBundles[CdnAllJsAsset::class]);
-        $I->assertInstanceOf(AssetBundle::class, $this->view->assetBundles[CdnUtilitiesJsAsset::class]);
     }
 }

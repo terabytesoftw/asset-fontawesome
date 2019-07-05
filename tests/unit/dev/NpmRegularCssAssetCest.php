@@ -52,11 +52,9 @@ class NpmRegularCssAssetCest
 
         NpmRegularCssAsset::register($this->view);
 
-        $I->assertCount(3, $this->view->assetBundles);
+        $I->assertCount(1, $this->view->assetBundles);
 
         $I->assertArrayHasKey(NpmRegularCssAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(NpmFontAwesomeCssAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(NpmUtilitiesCssAsset::class, $this->view->assetBundles);
 
         $result = $this->view->renderFile(codecept_data_dir() . 'main.php');
 
@@ -77,15 +75,11 @@ class NpmRegularCssAssetCest
 
         NpmRegularCssAsset::register($this->view);
 
-        $I->assertCount(3, $this->view->assetBundles);
+        $I->assertCount(1, $this->view->assetBundles);
 
         $I->assertArrayHasKey(NpmRegularCssAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(NpmFontAwesomeCssAsset::class, $this->view->assetBundles);
-        $I->assertArrayHasKey(NpmUtilitiesCssAsset::class, $this->view->assetBundles);
 
         $I->assertInstanceOf(AssetBundle::class, $this->view->assetBundles[NpmRegularCssAsset::class]);
-        $I->assertInstanceOf(AssetBundle::class, $this->view->assetBundles[NpmFontAwesomeCssAsset::class]);
-        $I->assertInstanceOf(AssetBundle::class, $this->view->assetBundles[NpmUtilitiesCssAsset::class]);
     }
 
     /**
@@ -100,5 +94,7 @@ class NpmRegularCssAssetCest
         $I->assertTrue(is_dir($bundle->basePath));
 
         $I->sourcesPublishVerifyFiles('css', $bundle);
+
+        $I->sourcesPublishVerifyFilesOnly($bundle);
     }
 }

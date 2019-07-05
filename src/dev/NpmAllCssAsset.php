@@ -16,15 +16,9 @@ class NpmAllCssAsset extends AssetBundle
      */
     public $css = [
         'css/all.css',
-    ];
-
-    /**
-     * @var array $depends
-     */
-    public $depends = [
-        \terabytesoft\assets\fontawesome\dev\NpmFontAwesomeCssAsset::class,
-        \terabytesoft\assets\fontawesome\dev\NpmUtilitiesCssAsset::class,
-
+        'css/fontawesome.css',
+        'css/svg-with-js.css',
+        'css/v4-shims.css',
     ];
 
     /**
@@ -33,6 +27,9 @@ class NpmAllCssAsset extends AssetBundle
     public $publishOptions = [
         'only' => [
             'css/all.css',
+            'css/fontawesome.css',
+            'css/svg-with-js.css',
+            'css/v4-shims.css',
             'webfonts/*',
         ],
     ];
